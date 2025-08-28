@@ -32,7 +32,7 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/axw/gocov"
+	"github.com/TaylorGWu/gocov"
 )
 
 type report struct {
@@ -147,8 +147,8 @@ func (r *report) printTotalCoverage(w io.Writer) {
 // PrintReport prints a coverage report to the given writer.
 func printReport(w io.Writer, r *report) {
 	w = tabwriter.NewWriter(w, 0, 8, 0, '\t', 0)
-	//fmt.Fprintln(w, "Package\tFunction\tStatements\t")
-	//fmt.Fprintln(w, "-------\t--------\t---------\t")
+	// fmt.Fprintln(w, "Package\tFunction\tStatements\t")
+	// fmt.Fprintln(w, "-------\t--------\t---------\t")
 	for _, pkg := range r.packages {
 		printPackage(w, pkg)
 		fmt.Fprintln(w)
